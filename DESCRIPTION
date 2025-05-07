@@ -1,0 +1,10 @@
+Package: enrichmentHPA
+Title: Human Protein Atals Enrichment Helper
+Version: 0.0.0.9000
+Authors@R: 
+    person("Artur", "Shvetcov", , "shvetsov1983@gmail.com", role = "cre")
+Description: Tool to download HPA datasets and conduct enrichment analysis with custom lists of genes and cells/brain regions
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

@@ -3,3 +3,4 @@
 export(build_expression_heatmap)
 export(load_reference)
 export(subset_reference)
+export(summarize_expression)

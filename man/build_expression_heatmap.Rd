@@ -4,14 +4,16 @@
 \alias{build_expression_heatmap}
 \title{Build a heatmap of normalized RNA expression for selected proteins and cell types}
 \usage{
-build_expression_heatmap(data, proteins, cells_of_interest)
+build_expression_heatmap(data, proteins, groups_of_interest, group_col)
 }
 \arguments{
 \item{data}{A data.frame as returned by \code{load_reference()}, containing RNA expression data.}
 
 \item{proteins}{A character vector of gene/protein names to include (must match \code{Gene.name} column).}
 
-\item{cells_of_interest}{A character vector of immune cell types to include (must match \code{Immune.cell} column).}
+\item{groups_of_interest}{Character vector of grouping values (e.g., cell types or regions).}
+
+\item{group_col}{Column name to group by (e.g. "Immune.cell", "Region", "Cluster").}
 }
 \value{
 A named list with two elements:

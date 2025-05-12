@@ -8,6 +8,7 @@
 #'     \item \code{"hpa_brain"} – RNA across 13 brain regions
 #'     \item \code{"rna_sn_clusters"} – RNA across 34 single nuclei cluster types in 11 brain regions
 #'     \item \code{"rna_ic"} – RNA expression in immune cell types
+#'     \item \code{"rna_ic_monaco"} - RNA expression in subsets of immune cell types
 #'   }
 #' @param dest_dir Local directory to store the downloaded file (default: \code{tempdir()}).
 #' @param overwrite Logical; if \code{TRUE}, the file will be re-downloaded even if it exists.
@@ -21,7 +22,8 @@ load_reference <- function(file,
   urls_list <- list(
     hpa_brain = "https://www.proteinatlas.org/download/tsv/rna_brain_region_hpa.tsv.zip",
     rna_sn_clusters = "https://www.proteinatlas.org/download/tsv/rna_single_nuclei_cluster_type.tsv.zip",
-    rna_ic = "https://www.proteinatlas.org/download/tsv/rna_immune_cell.tsv.zip"
+    rna_ic = "https://www.proteinatlas.org/download/tsv/rna_immune_cell.tsv.zip",
+    rna_ic_monaco = "https://www.proteinatlas.org/download/tsv/rna_immune_cell_monaco.tsv.zip"
   )
 
   # Check for valid type

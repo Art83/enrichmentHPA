@@ -19,6 +19,7 @@ load_reference(
 \item \code{"hpa_brain"} – RNA across 13 brain regions
 \item \code{"rna_sn_clusters"} – RNA across 34 single nuclei cluster types in 11 brain regions
 \item \code{"rna_ic"} – RNA expression in immune cell types
+\item \code{"rna_ic_monaco"} - RNA expression in subsets of immune cell types
 }}
 
 \item{dest_dir}{Local directory to store the downloaded file (default: \code{tempdir()}).}

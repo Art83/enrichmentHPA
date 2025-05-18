@@ -4,16 +4,10 @@
 \alias{subset_reference}
 \title{Subset HPA RNA-seq reference data by gene and group}
 \usage{
-subset_reference(data, genes, groups, group_col, ...)
+subset_reference(data, ...)
 }
 \arguments{
 \item{data}{A data.frame returned by \code{load_reference()}.}
-
-\item{genes}{Character vector of gene names (matching \code{Gene.name} column).}
-
-\item{groups}{Character vector of group values (e.g., cell types, regions).}
-
-\item{group_col}{Name of the grouping column (e.g. \code{Immune.cell}).}
 }
 \value{
 A filtered data.frame containing only matching genes and groups.

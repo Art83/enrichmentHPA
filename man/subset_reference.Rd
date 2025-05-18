@@ -4,7 +4,7 @@
 \alias{subset_reference}
 \title{Subset HPA RNA-seq reference data by gene and group}
 \usage{
-subset_reference(data, genes, groups, group_col)
+subset_reference(data, genes, groups, group_col, ...)
 }
 \arguments{
 \item{data}{A data.frame returned by \code{load_reference()}.}

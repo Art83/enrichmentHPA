@@ -2,6 +2,7 @@
 
 export(build_expression_heatmap)
 export(enrich_by_region)
+export(enrich_by_tissue)
 export(load_reference)
 export(run_enrichment)
 export(subset_reference)

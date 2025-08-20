@@ -10,6 +10,7 @@
 #'     \item \code{"rna_ic"} – RNA expression in immune cell types
 #'     \item \code{"rna_ic_monaco"} - RNA expression in subsets of immune cell types
 #'     \item \code{"rna_sn_clusters_organs"} - RNA expression across clusters in different organs
+#'     \item \code{"rna_organs"}
 #'   }
 #' @param dest_dir Local directory to store the downloaded file (default: \code{tempdir()}).
 #' @param overwrite Logical; if \code{TRUE}, the file will be re-downloaded even if it exists.
@@ -25,7 +26,8 @@ load_reference <- function(file,
     rna_sn_clusters_brain = "https://www.proteinatlas.org/download/tsv/rna_single_nuclei_cluster_type.tsv.zip",
     rna_ic = "https://www.proteinatlas.org/download/tsv/rna_immune_cell.tsv.zip",
     rna_ic_monaco = "https://www.proteinatlas.org/download/tsv/rna_immune_cell_monaco.tsv.zip",
-    rna_sn_clusters_organs = "https://www.proteinatlas.org/download/tsv/rna_single_cell_cluster.tsv.zip"
+    rna_sn_clusters_organs = "https://www.proteinatlas.org/download/tsv/rna_single_cell_cluster.tsv.zip",
+    rna_organs = "https://www.proteinatlas.org/download/tsv/rna_tissue_consensus.tsv.zip"
   )
 
   # Check for valid type

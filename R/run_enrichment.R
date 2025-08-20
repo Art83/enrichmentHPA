@@ -19,6 +19,7 @@ run_enrichment <- function(gene_list,
                            gsea_weight = 1,
                            n_perm = 0,
                            seed = NULL) {
+  if (length(gene_list) == 0 || is.null(gene_list)) stop("gene_list must not be empty.")
   method <- match.arg(method)
   gene_list <- intersect(gene_list, universe)
 

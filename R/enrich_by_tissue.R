@@ -18,6 +18,7 @@ enrich_by_tissue <- function(gene_list,
                              reference_df,
                              method = c("gsea", "hypergeo"),
                              expr_col = "nTPM",
+                             gene_stats = NULL,
                              universe = NULL,
                              expression_threshold = 1,
                              n_perm = 1000,
@@ -49,12 +50,15 @@ enrich_by_tissue <- function(gene_list,
       if (nrow(df_tissue) < min_genes) return(NULL)
 
       if (method == "gsea") {
-        ranked_genes <- df_tissue %>%
-          dplyr::distinct(Gene.name, .keep_all = TRUE) %>%
-          dplyr::arrange(dplyr::desc(.data[[expr_col]])) %>%
-          dplyr::select(Gene.name, !!rlang::sym(expr_col))
 
-        stats <- setNames(ranked_genes[[expr_col]], ranked_genes$Gene.name)
+
+        if(is.null(gene_stats)){
+          ranked_genes <- df_tissue %>%
+            dplyr::distinct(Gene.name, .keep_all = TRUE) %>%
+            dplyr::arrange(dplyr::desc(.data[[expr_col]])) %>%
+            dplyr::select(Gene.name, !!rlang::sym(expr_col))
+          stats <- setNames(ranked_genes[[expr_col]], ranked_genes$Gene.name)
+        }
 
         es <- enrichmentHPA::run_enrichment(
           gene_list = gene_list,

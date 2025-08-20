@@ -9,6 +9,7 @@ enrich_by_tissue(
   reference_df,
   method = c("gsea", "hypergeo"),
   expr_col = "nTPM",
+  gene_stats = NULL,
   universe = NULL,
   expression_threshold = 1,
   n_perm = 1000,

@@ -20,6 +20,7 @@ enrich_by_region <- function(gene_list,
                              df_ref,
                              group_col = "Region",
                              expression_col = "pTPM",
+                             gene_stats = NULL,
                              method = c("gsea", "hypergeometric"),
                              threshold = 10,
                              universe_type = c("global", "group"),
@@ -58,7 +59,13 @@ enrich_by_region <- function(gene_list,
     }
 
     if (method == "gsea") {
-      gene_stats <- tapply(df_grp[[expression_col]], df_grp$Gene.name, mean, na.rm = TRUE)
+      if(is.null(gene_stats)){
+        gene_stats <- tapply(df_grp[[expression_col]], df_grp$Gene.name, mean, na.rm = TRUE)
+      } else {
+        gene_stats <- gene_stats[names(gene_stats) %in% universe]
+        if(length(gene_stats) == 0) stop("Gene names in gene_stats can't be found in universe")
+      }
+
 
       res <- run_enrichment(
         gene_list = gene_list,

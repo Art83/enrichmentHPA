@@ -53,11 +53,10 @@ enrich_by_tissue <- function(gene_list,
 
 
         if(is.null(gene_stats)){
-          ranked_genes <- df_tissue %>%
-            dplyr::distinct(Gene.name, .keep_all = TRUE) %>%
-            dplyr::arrange(dplyr::desc(.data[[expr_col]])) %>%
-            dplyr::select(Gene.name, !!rlang::sym(expr_col))
-          stats <- setNames(ranked_genes[[expr_col]], ranked_genes$Gene.name)
+          gene_stats <- tapply(df_tissue[[expression_col]], df_tissue$Gene.name, mean, na.rm = TRUE)
+        } else {
+          gene_stats <- gene_stats[names(gene_stats) %in% universe]
+          if(length(gene_stats) == 0) stop("Gene names in gene_stats can't be found in universe")
         }
 
         es <- enrichmentHPA::run_enrichment(

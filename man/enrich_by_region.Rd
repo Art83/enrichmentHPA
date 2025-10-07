@@ -9,6 +9,7 @@ enrich_by_region(
   df_ref,
   group_col = "Region",
   expression_col = "pTPM",
+  gene_stats = NULL,
   method = c("gsea", "hypergeometric"),
   threshold = 10,
   universe_type = c("global", "group"),

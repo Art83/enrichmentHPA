@@ -68,7 +68,9 @@ run_enrichment <- function(gene_list,
   step_miss[!hits] <- 1 / (N - Nh)
 
   running_score <- cumsum(step_hit - step_miss)
-  ES <- max(running_score, na.rm = TRUE)
+  ES <- ifelse(abs(max(running_score)) > abs(min(running_score)),
+               max(running_score),
+               min(running_score))
 
   # Permutation-based p-value
   pval <- NA

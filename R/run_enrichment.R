@@ -92,6 +92,9 @@ run_enrichment <- function(gene_list,
     pval <- (sum(perm_ES >= ES) + 1) / (n_perm + 1)
   }
 
+  peak_index <- which.max(running_score)
+  leading_edge <- names(ranked_genes)[hits & seq_along(ranked_genes) <= peak_index]
+
   return(list(
     method = "gsea",
     enrichment_score = ES,
@@ -99,6 +102,6 @@ run_enrichment <- function(gene_list,
     overlap = Nh,
     input_set_size = length(gene_list),
     universe_size = N,
-    leading_edge = names(ranked_genes)[which.max(running_score)]
+    leading_edge = leading_edge
   ))
 }

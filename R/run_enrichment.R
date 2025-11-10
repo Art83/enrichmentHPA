@@ -102,6 +102,6 @@ run_enrichment <- function(gene_list,
     overlap = Nh,
     input_set_size = length(gene_list),
     universe_size = N,
-    leading_edge = leading_edge
+    leading_edge = I(list(leading_edge))
   ))
 }

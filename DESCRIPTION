@@ -1,15 +1,15 @@
-Package: enrichmentHPA
-Title: Human Protein Atals Enrichment Helper
+Package: xEnrich
+Title: Multi-Scale Enrichment Analysis Across Organs and Cell Types
 Version: 0.0.0.9000
 Authors@R: 
     person("Artur", "Shvetcov", , "shvetsov1983@gmail.com", role = "cre")
-Description: Tool to download HPA datasets and conduct enrichment analysis with custom lists of genes and cells/brain regions
+Description: xEnrich provides flexible tools for performing gene and protein enrichment analysis across multiple biological reference datasets. It supports both hypergeometric and GSEA-based methods for quantifying overrepresentation in bulk tissue (e.g., Human Protein Atlas) and single-cell transcriptomic datasets (e.g., Tabula Sapiens).
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-URL: https://github.com/Art83/enrichmentHPA
-BugReports: https://github.com/Art83/enrichmentHPA/issues
+URL: https://github.com/Art83/xEnrich
+BugReports: https://github.com/Art83/xEnrich/issues
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

@@ -12,6 +12,7 @@
 #' @param group_col Column in \code{ihc_reference} used for grouping (e.g., "CellType" or "Tissue").
 #' @param universe Optional character vector of background genes. If NULL, all genes
 #'   found in \code{ihc_reference} are used.
+#' @param seed seed for downstream gsea
 #' @param ... Reserved for future options.
 #'
 #' @return A data frame with enrichment statistics per group:
@@ -39,6 +40,7 @@ enrich_by_ihc <- function(gene_list,
                           gene_stats = NULL,
                           n_perm = NULL,
                           min_genes = 10,
+                          seed=NULL,
                           expr_col = "Level") {
 
   # Validate
@@ -94,6 +96,7 @@ enrich_by_ihc <- function(gene_list,
           gene_stats = local_gene_stats,
           method = "gsea",
           n_perm = n_perm,
+          seed = seed,
           universe = universe
         )
       } else {

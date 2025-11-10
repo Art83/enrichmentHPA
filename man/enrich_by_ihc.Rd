@@ -14,6 +14,7 @@ enrich_by_ihc(
   gene_stats = NULL,
   n_perm = NULL,
   min_genes = 10,
+  seed = NULL,
   expr_col = "Level"
 )
 }
@@ -31,6 +32,8 @@ Defaults to \code{c("Medium", "High")}.}
 
 \item{universe}{Optional character vector of background genes. If NULL, all genes
 found in \code{ihc_reference} are used.}
+
+\item{seed}{seed for downstream gsea}
 
 \item{...}{Reserved for future options.}
 }

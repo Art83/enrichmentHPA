@@ -39,8 +39,9 @@ run_enrichment <- function(gene_list,
       p_value = pval,
       overlap = k,
       input_set_size = n,
-      enriched_set_size = K,
-      universe_size = N
+      group_set = K,
+      universe_size = N,
+      fold_change = (k/n) / (K / N)
     ))
   }
 
@@ -95,6 +96,11 @@ run_enrichment <- function(gene_list,
   peak_index <- which.max(running_score)
   leading_edge <- names(ranked_genes)[hits & seq_along(ranked_genes) <= peak_index]
 
+  N <- length(universe)
+  K <- length(enriched_genes)
+  n <- length(gene_list)
+  k <- sum(gene_list %in% enriched_genes)
+
   return(list(
     method = "gsea",
     enrichment_score = ES,
@@ -102,6 +108,7 @@ run_enrichment <- function(gene_list,
     overlap = Nh,
     input_set_size = length(gene_list),
     universe_size = N,
-    leading_edge = I(list(leading_edge))
+    leading_edge = I(list(leading_edge)),
+    fold_change = (k/n) / (K / N)
   ))
 }

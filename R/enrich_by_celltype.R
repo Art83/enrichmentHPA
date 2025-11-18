@@ -72,7 +72,7 @@ enrich_by_celltype <- function(gene_list,
 
 
 
-      res <- enrichmentHPA::run_enrichment(
+      res <- run_enrichment(
         gene_list = gene_list,
         enriched_genes = expressed_genes,
         gene_stats = local_gene_stats,

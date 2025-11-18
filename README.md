@@ -1,4 +1,4 @@
-## 🧬 xEnrich: Organ- and Cell-Level Context Enrichment for Biomarker Discovery
+## 🧬 xEnrich: Organ- and Cell-Level Context Enrichment for Mechanistic and Biomarker Discovery
 
 **xEnrich** is an R toolkit for translating differential omics results into biological context.\
 It addresses a central question in biomarker discovery:
@@ -9,4 +9,4 @@ By integrating reference data from the **Human Protein Atlas (IHC, mRNA)** and *
 
 Designed for translational and systems biology workflows, xEnrich provides lightweight functions and a unified interface that can be used prior to pathway enrichment with tools such as **Reactome**, **enrichR**, or **clusterProfiler**.
 
-The core idea is to bridge statistical discovery and physiological relevance moving away from differential lists to mechanistic hypotheses that may accelerate biomarker validation across complex diseases.
+The core idea is to bridge statistical discovery and physiological relevance moving away from differential lists to mechanistic hypotheses that may accelerate mechanistic and biomarker validation across complex diseases.
